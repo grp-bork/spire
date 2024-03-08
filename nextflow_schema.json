@@ -10,7 +10,7 @@
             "description": "General Input",
             "default": "",
             "properties": {
-                "inputid": {
+                "input_SRA_id": {
                     "type": "string",
                     "fa_icon": "fas fa-sign-in-alt",
                     "description": "SRA id of data to run the pipeline on"
@@ -24,7 +24,7 @@
             },
             "required": [
                 "outdir",
-                "inputid"
+                "input_SRA_id"
             ],
             "fa_icon": "fas fa-terminal"
         },

@@ -509,11 +509,8 @@ process gtdbtk {
 
 workflow {
 
-//    input_samples = Channel
-//        .fromSRA(params.ids, apiKey:'f431a533438e2ca2f7c5b60262026f444707')
-//        .view()
     input_samples = Channel
-        .fromFilePairs('/g/scb2/bork/fullam/scratch_replacement/data/ERR*_{1,2}.fastq.gz')
+        .fromSRA(params.input_SRA_id, apiKey:'f431a533438e2ca2f7c5b60262026f444707')
         .view()
 
     preprocess_fastqs(input_samples)
