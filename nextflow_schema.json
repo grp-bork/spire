@@ -23,7 +23,6 @@
                 }
             },
             "required": [
-                "inputdir",
                 "outdir",
                 "inputid"
             ],
