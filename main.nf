@@ -11,11 +11,12 @@ process preprocess_fastqs {
 
     script:
     """
+    export HOME=\$(pwd)
     mkdir ${sample_id}
     mv $fastq_files ${sample_id}
 
-    create_ngless_template_files.py -r 'hg19'
-    ngless -t ./ raw_data_filter.ngl -j ${task.cpus} ./ ${sample_id}
+    create_ngless_template_files.py -r ${params.human_reference}
+    ngless --keep-temporary-files --trace -t ./ raw_data_filter.ngl -j ${task.cpus} ./ ${sample_id}
     cat raw_data_filter.ngl.output_ngless/fq.tsv > read_count_after_qc.txt
     """
 }

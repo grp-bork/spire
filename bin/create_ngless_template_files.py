@@ -62,13 +62,9 @@ write(as_reads(mapped), ofile=sample+'/'+sample+'.filtered.fq.gz')
 
 
 if __name__ == "__main__":
-    references = {
-        #"hg19": "/scratch/fullam/references/human.fna",
-        "hg19": '/g/scb2/bork/fullam/references_scratch/references/human.fna',
-    }
     args = parse_args(sys.argv[1:])
     with open("raw_data_filter.ngl", "w") as f:
-        reference_fa = references.get(args.reference, None)
+        reference_fa = args.reference
         if reference_fa:
             f.write(ngless_filter_template(reference_fa))
         else:
