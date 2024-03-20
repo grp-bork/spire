@@ -39,6 +39,12 @@
                     "description": "NCBI API Key for downloading data",
                     "help_text": "Details: https://ncbiinsights.ncbi.nlm.nih.gov/2017/11/02/new-api-keys-for-the-e-utilities/",
                     "default": "none"
+                },
+                "filtering_reference_path": {
+                    "type": "string",
+                    "description": "Path to igenomes directory",
+                    "help_text": "This should be the root directory of the igenomes reference genomes",
+                    "default": "none"
                 }
             }
         }
