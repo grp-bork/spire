@@ -15,7 +15,7 @@ process preprocess_fastqs {
     mkdir ${sample_id}
     mv $fastq_files ${sample_id}
 
-    create_ngless_template_files.py -r ${params.filtering_reference}
+    create_ngless_template_files.py -r ${params.filtering_reference_path}/igenomes/Homo_sapiens/UCSC/hg19/genome.fa
     ngless --keep-temporary-files --trace -t ./ raw_data_filter.ngl -j ${task.cpus} ./ ${sample_id}
     cat raw_data_filter.ngl.output_ngless/fq.tsv > read_count_after_qc.txt
     """
@@ -511,7 +511,7 @@ process gtdbtk {
 workflow {
 
     input_samples = Channel
-        .fromSRA(params.input_SRA_id, apiKey:'f431a533438e2ca2f7c5b60262026f444707')
+        .fromSRA(params.input_SRA_id, apiKey:params.NCBI_API_KEY)
         .view()
 
     preprocess_fastqs(input_samples)
