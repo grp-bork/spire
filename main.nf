@@ -533,7 +533,7 @@ workflow {
     gunc(binning.out)
     checkm2(binning.out)
     eggnog_mapper(gene_calling_prodigal.out.genecalls_faa)
-    trnascan(assembly.out)
+    //trnascan(assembly.out)
     rgiv6(per_bin_genecalling.out)
     gtdbtk(binning.out.collect())
 }
