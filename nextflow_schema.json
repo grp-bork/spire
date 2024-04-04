@@ -40,41 +40,35 @@
                     "help_text": "Details: https://ncbiinsights.ncbi.nlm.nih.gov/2017/11/02/new-api-keys-for-the-e-utilities/",
                     "default": "none"
                 },
-                "filtering_reference_path": {
-                    "type": "string",
-                    "description": "Path to igenomes directory",
-                    "help_text": "This should be the root directory of the igenomes reference genomes",
-                    "default": "none"
-                },
                 "gtdb_data_path": {
                     "type": "string",
                     "description": "Path to gtdb database directory",
                     "help_text": "This should be the root directory of gtdb database v214",
-                    "default": "none"
+                    "default": ""
                 },
                 "checkm2db_path": {
                     "type": "string",
                     "description": "Path to gtdb database directory",
                     "help_text": "This should be the root directory of checkm2 db",
-                    "default": "none"
+                    "default": ""
                 },
                 "guncdb_path": {
                     "type": "string",
                     "description": "Path to guncdb_path directory",
                     "help_text": "This should be the root directory of gunc db",
-                    "default": "none"
+                    "default": ""
                 },
                 "eggnog-mapper": {
                     "type": "string",
                     "description": "Path to eggnog-mapper directory",
                     "help_text": "This should be the root directory of eggnog-mapper db",
-                    "default": "none"
+                    "default": ""
                 },
                 "ngless_reference": {
                     "type": "string",
                     "description": "Path to ngless_reference directory",
                     "help_text": "This should be the root directory of ngless_reference ",
-                    "default": "none"
+                    "default": ""
                 }
             }
         }
