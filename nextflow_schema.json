@@ -45,6 +45,36 @@
                     "description": "Path to igenomes directory",
                     "help_text": "This should be the root directory of the igenomes reference genomes",
                     "default": "none"
+                },
+                "gtdb_data_path": {
+                    "type": "string",
+                    "description": "Path to gtdb database directory",
+                    "help_text": "This should be the root directory of gtdb database v214",
+                    "default": "none"
+                },
+                "checkm2db_path": {
+                    "type": "string",
+                    "description": "Path to gtdb database directory",
+                    "help_text": "This should be the root directory of checkm2 db",
+                    "default": "none"
+                },
+                "guncdb_path": {
+                    "type": "string",
+                    "description": "Path to guncdb_path directory",
+                    "help_text": "This should be the root directory of gunc db",
+                    "default": "none"
+                },
+                "eggnog-mapper": {
+                    "type": "string",
+                    "description": "Path to eggnog-mapper directory",
+                    "help_text": "This should be the root directory of eggnog-mapper db",
+                    "default": "none"
+                },
+                "ngless_reference": {
+                    "type": "string",
+                    "description": "Path to ngless_reference directory",
+                    "help_text": "This should be the root directory of ngless_reference ",
+                    "default": "none"
                 }
             }
         }
