@@ -510,9 +510,16 @@ process gtdbtk {
 
 workflow {
 
+    if (params.NCBI_API_KEY == 'none') {
+    input_samples = Channel
+        .fromSRA(params.input_SRA_id)
+        .view()
+    }
+    else {
     input_samples = Channel
         .fromSRA(params.input_SRA_id, apiKey:params.NCBI_API_KEY)
         .view()
+    }
 
     preprocess_fastqs(input_samples)
     assembly(preprocess_fastqs.out)
