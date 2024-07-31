@@ -22,3 +22,26 @@
     </td>
   </tr>
 </table>
+
+</table>
+
+---
+#### Description
+
+#### Citation
+
+Cite the [SPIRE publication](https://doi.org/10.1093/nar/gkad943) when using our workflow:
+```
+Schmidt TSB, Fullam A, Ferretti P, et al. SPIRE: a Searchable, Planetary-scale mIcrobiome REsource. Nucleic Acids Res. 2024;52(D1):D777-D783. doi:10.1093/nar/gkad943
+```
+
+---
+# Overview
+
+
+---
+# Usage
+## Cloud-based Workflow Manager (CloWM)
+This workflow will be available on the CloWM platform (coming soon).
+
+## Input 
