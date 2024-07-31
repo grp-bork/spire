@@ -37,11 +37,11 @@ Schmidt TSB, Fullam A, Ferretti P, et al. SPIRE: a Searchable, Planetary-scale m
 
 ---
 # Overview
-
-
----
-# Usage
-## Cloud-based Workflow Manager (CloWM)
-This workflow will be available on the CloWM platform (coming soon).
-
-## Input 
+1. Do this
+2. Do this
+3. Do this
+4. Do this
+5. Do this
+6. Do this
+7. Do this
+8. Do this
