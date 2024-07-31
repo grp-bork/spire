@@ -37,11 +37,30 @@ Schmidt TSB, Fullam A, Ferretti P, et al. SPIRE: a Searchable, Planetary-scale m
 
 ---
 # Overview
-1. Do this
-2. Do this
-3. Do this
-4. Do this
-5. Do this
-6. Do this
-7. Do this
-8. Do this
+
+**Preprocessing:**
+1. Trimming (ngless)
+2. Length filtering (ngless)
+3. Human DNA decontamination (GRCh38)
+
+**MAGs:**
+1. Assembly (megahit)
+2. Gene Calling (prodigal)
+3. Remove Small Contigs (seqtk)
+4. Index (bwa)
+5. Alignment (bwa, samtools)
+6. Calculate Depths (jgi_summarize_bam_contig_depths)
+7. Binning (metabat2)
+8. Per-Bin Gene Calling (seqtk)
+9. Assembly Stats (assembly-stats)
+10. Assembly Mash Sketching (mash)
+11. Bin Mash Sketching (mash)
+
+**Annotation:**
+1. rRNA Detection (barrnap)
+2. ARG Annotation (abricate, rgi)
+3. Virulence Factor Annotation (abricate)
+4. sORFs Detection (macrel)
+5. Genome Quality Assessment (checkm2, gunc)
+6. Functional Annotation (eggnog-mapper)
+7. Taxonomic Classification (gtdbtk)
