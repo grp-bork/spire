@@ -10,7 +10,7 @@
     "10.1093/nar/gkad943"
   ],
   "exampleParameters": {
-    "input_SRA_id": "PRJEB6102",
+    "input_SRA_id": "PRJEB6102"
   },
   "resourceParameters": [
     "gtdb_data_path",
