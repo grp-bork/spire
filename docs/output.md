@@ -18,6 +18,7 @@ Binning (metabat2)
 * `bins/bins/<id>.psa_megahit.psb_metabat2.{000001}.fa.gz`
   
 Per-Bin Gene Calling (seqtk)
+* `per_bin_genecalls/<id>_per_bin_genecalls.tar.gz`
 
 Assembly Stats (assembly-stats)
 * `assembly_stats/<id>.assembly_stats.tsv`
