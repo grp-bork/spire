@@ -7,8 +7,8 @@ process preprocess_fastqs {
     tuple val(sample_id), path(fastq_files)
 
     output:
-    tuple val(sample_id), path("${sample_id}/${sample_id}.filtered.*fq.gz")
-    path("read_count_after_qc.txt")
+    tuple val(sample_id), path("${sample_id}/${sample_id}.filtered.*fq.gz"), emit: filtered
+    path("read_count_after_qc.txt"), emit: counts
 
     script:
     """
@@ -475,11 +475,11 @@ workflow {
     }
 
     preprocess_fastqs(input_samples)
-    assembly(preprocess_fastqs.out)
+    assembly(preprocess_fastqs.out.filtered)
     gene_calling_prodigal(assembly.out)
     remove_small_contigs(assembly.out)
     index(remove_small_contigs.out)
-    alignment(remove_small_contigs.out.join(index.out).join(preprocess_fastqs.out))
+    alignment(remove_small_contigs.out.join(index.out).join(preprocess_fastqs.out.filtered))
     depths(alignment.out)
     binning(depths.out.join(remove_small_contigs.out))
     per_bin_genecalling(binning.out.collect().join(gene_calling_prodigal.out.genecalls_faa).join(gene_calling_prodigal.out.genecalls_fna))
