@@ -1,13 +1,14 @@
 #!/usr/bin/env nextflow
  
 process preprocess_fastqs {
-    publishDir "${params.outdir}/${sample_id}", pattern: "read_count_after_qc.txt", mode: 'copy'
+    publishDir "${params.outdir}/${sample_id}"
 
     input:
     tuple val(sample_id), path(fastq_files)
 
     output:
     tuple val(sample_id), path("${sample_id}/${sample_id}.filtered.*fq.gz")
+    path("read_count_after_qc.txt")
 
     script:
     """
@@ -207,7 +208,7 @@ process binning {
 }
 
 process per_bin_genecalling {
-    publishDir "${params.outdir}/${sample_id}/per_bin_genecalls/", pattern: '*.gz'
+    publishDir "${params.outdir}/${sample_id}/per_bin_genecalls/"
 
     input:
     tuple val(sample_id), file('bins/*'), file(genecalls_faa), file(genecalls_fna)
