@@ -1,8 +1,8 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema",
     "$id": "https://git.embl.de",
-    "title": "SPIRE",
-    "description": "This is v1 of the pipleine used to generate data on spire.embl.de",
+    "title": "SPIRE nextflow schema",
+    "description": "SPIRE workflow v1 used to generate data on spire.embl.de",
     "definitions": {
         "input_output_options": {
             "title": "Input / Output options",
@@ -42,33 +42,38 @@
                 },
                 "gtdb_data_path": {
                     "type": "string",
-                    "description": "Path to gtdb database directory",
+                    "description": "Path to the GTDB database directory",
                     "help_text": "This should be the root directory of gtdb database v214",
-                    "default": ""
+                    "hidden": true,
+                    "default": "/vol/data/databases/clowm/CLDB-018e12ef116275458ea149715133b0ec/latest/release214/"
                 },
                 "checkm2db_path": {
                     "type": "string",
-                    "description": "Path to gtdb database directory",
-                    "help_text": "This should be the root directory of checkm2 db",
-                    "default": ""
+                    "description": "Path to the CheckM2 database file",
+                    "help_text": "This should be the uniref diamond database of checkm2",
+                    "hidden": true,
+                    "default": "/vol/data/databases/clowm/CLDB-018e846395037fbf8755cbbe8537206e/018e8463950c723e8939a838a9c880a0/checkm2/uniref100.KO.1.dmnd"
                 },
                 "guncdb_path": {
                     "type": "string",
-                    "description": "Path to guncdb_path directory",
-                    "help_text": "This should be the root directory of gunc db",
-                    "default": ""
+                    "description": "Path to the GUNC database file",
+                    "help_text": "This should be the proGenomes diamond database of GUNC",
+                    "hidden": true,
+                    "default": "/vol/data/databases/clowm/CLDB-018e75b260a672c7a1051c96b1a3bb1a/018e75b260b07b35ab2cb6d202505f42/gunc_db_progenomes2.1.dmnd"
                 },
                 "eggnog-mapper": {
                     "type": "string",
-                    "description": "Path to eggnog-mapper directory",
+                    "description": "Path to the eggnog-mapper database directory",
                     "help_text": "This should be the root directory of eggnog-mapper db",
-                    "default": ""
+                    "hidden": true,
+                    "default": "/vol/data/databases/clowm/CLDB-018e846affa774508716ac5b5a20386e/018e846affb17f08b4b17d7226aa602e/eggnog-mapper/5.0.2/"
                 },
                 "ngless_reference": {
                     "type": "string",
-                    "description": "Path to ngless_reference directory",
-                    "help_text": "This should be the root directory of ngless_reference ",
-                    "default": ""
+                    "description": "Path to the ngless human reference genome file",
+                    "help_text": "This should be the path to a human reference genome fasta file",
+                    "hidden": true,
+                    "default": "/vol/data/databases/clowm/CLDB-018e846dacd67b10acfad42129bd82e4/018e846dace2766d93e3e32177e66ebb/ngless_human/human.fna"
                 }
             }
         }
