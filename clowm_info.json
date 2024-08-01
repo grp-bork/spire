@@ -10,13 +10,13 @@
     "10.1093/nar/gkad943"
   ],
   "exampleParameters": {
-    "input_SRA_id": "PRJEB6102"
+    "input_SRA_id": "SAMN07440167"
   },
   "resourceParameters": [
-    "gtdb_data_path",
-    "checkm2db_path",
-    "guncdb_path",
-    "eggnog-mapper",
-    "ngless_reference"
+    "GTDBTK_DATA_PATH",
+    "CHECKM2DB",
+    "GUNC_DB",
+    "EGGNOG_DATA_DIR",
+    "NGLESS_REFERENCE"
   ]
 }
