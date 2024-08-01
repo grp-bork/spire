@@ -318,24 +318,6 @@ process rrna_detection {
     """
 }
 
-process deeparg {
-    publishDir "${params.outdir}/${sample_id}/deeparg/"
-
-    input:
-    tuple val(sample_id), file(genecalls_fna)
-
-    output:
-    file("${sample_id}.${params.assemblytype}.deeparg.out*ARG")
-
-    script:
-
-    """
-    mkdir theano_compiledir
-    export THEANO_FLAGS="base_compiledir=./theano_compiledir"
-    zcat ${genecalls_fna} > deeparg_input.fna
-    deeparg predict --model LS --type nucl --input deeparg_input.fna --out ./${sample_id}.${params.assemblytype}.deeparg.out --data-path ${params.deep_arg_data}
-    """
-}
 
 process abricate {
     publishDir "${params.outdir}/${sample_id}/abricate/"
@@ -420,36 +402,6 @@ process eggnog_mapper {
 
 }
 
-process trnascan {
-    publishDir "${params.outdir}/${sample_id}/trnascan/"
-
-    input:
-    tuple val(sample_id), file(unfiltered_assembly)
-
-    output:
-    file "${sample_id}.tRNA.general.out"
-    file "${sample_id}.tRNA.general.struct"
-    file "${sample_id}.tRNA.general.stats"
-    file "${sample_id}.tRNA.general.gff"
-    file "${sample_id}.tRNA.general.fa"
-
-    script:
-    """
-    TMPDIR=./
-    zcat ${unfiltered_assembly} > ${sample_id}_assembly.fa
-    tRNAscan-SE \
-    --conf ${params.trnaconf} \
-    --forceow \
-    --thread 2 \
-    -G \
-    --output ${sample_id}.tRNA.general.out \
-    --struct ${sample_id}.tRNA.general.struct \
-    --stats ${sample_id}.tRNA.general.stats \
-    --gff ${sample_id}.tRNA.general.gff \
-    --fasta ${sample_id}.tRNA.general.fa \
-    ${sample_id}_assembly.fa
-    """
-}
 
 process checkm2 {
     publishDir "${params.outdir}/${sample_id}/checkm2/"
@@ -534,13 +486,11 @@ workflow {
     assembly_mash_sketching(assembly.out)
     bin_mash_sketching(binning.out.collect())
     rrna_detection(assembly.out)
-    //deeparg(gene_calling_prodigal.out.genecalls_fna)
     abricate(gene_calling_prodigal.out.genecalls_fna)
     macrel(assembly.out)
     gunc(binning.out)
     checkm2(binning.out)
     eggnog_mapper(gene_calling_prodigal.out.genecalls_faa)
-    //trnascan(assembly.out)
     rgiv6(per_bin_genecalling.out)
     gtdbtk(binning.out.collect())
 }
