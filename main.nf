@@ -15,7 +15,7 @@ process preprocess_fastqs {
     mkdir ${sample_id}
     mv $fastq_files ${sample_id}
 
-    create_ngless_template_files.py -r ${params.ngless_reference}
+    create_ngless_template_files.py -r ${params.NGLESS_REFERENCE}
     ngless -t ./ raw_data_filter.ngl -j ${task.cpus} ./ ${sample_id}
     cat raw_data_filter.ngl.output_ngless/fq.tsv > read_count_after_qc.txt
     """
