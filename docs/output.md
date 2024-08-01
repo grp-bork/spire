@@ -22,9 +22,8 @@ Per-Bin Gene Calling (seqtk)
 Assembly Stats (assembly-stats)
 * `assembly_stats/<id>.assembly_stats.tsv`
 
-Assembly Mash Sketching (mash)
+Assembly and Bin Mash Sketching (mash)
 * `assembly_mash_sketching/<id>-assembled.fa.gz.msh`
-Bin Mash Sketching (mash)
 * `bin_mash_sketching/<id>/<id>.psa_megahit.psb_metabat2.00001.fa.msh`
 
 ## Annotation:
