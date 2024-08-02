@@ -446,7 +446,7 @@ process rgiv6 {
 }
 
 process gtdbtk {
-    publishDir "${params.outdir}/${sample_id}/rgiv6/"
+    publishDir "${params.outdir}/${sample_id}/gtdbtk/"
 
     input:
     tuple val(sample_id), file('bins/*')
