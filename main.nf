@@ -169,7 +169,7 @@ process depths {
 }
 
 process binning {
-    publishDir "${params.outdir}/${sample_id}/bins/"
+    publishDir "${params.outdir}/${sample_id}/"
 
     input:
     tuple val(sample_id), file(depthfile), file(assembly_file)
@@ -214,7 +214,7 @@ process per_bin_genecalling {
     tuple val(sample_id), file('bins/*'), file(genecalls_faa), file(genecalls_fna)
 
     output:
-    tuple val(sample_id), file("genecalls/*")
+    tuple val(sample_id), file("${sample_id}/*")
 
     script:
     """
