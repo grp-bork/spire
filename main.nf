@@ -1,7 +1,7 @@
 #!/usr/bin/env nextflow
  
 process preprocess_fastqs {
-    publishDir "${params.outdir}/filtering/${sample_id}"
+    publishDir "${params.outdir}/${sample_id}/filtering/${sample_id}"
 
     input:
     tuple val(sample_id), path(fastq_files)
