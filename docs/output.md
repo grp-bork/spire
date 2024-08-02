@@ -4,10 +4,10 @@ The following outputs are expected for the respective steps in the pipeline
 ## Filtered Data
 
 Human/Quality filtered Fastqs:
-* `<id>/<id>.filtered.pair.1.fq.gz`
-* `<id>/<id>.filtered.pair.2.fq.gz`
-* `<id>/<id>.filtered.singles.fq.gz`
-* `read_count_after_qc.txt`
+* `filtering/<id>/<id>.filtered.pair.1.fq.gz`
+* `filtering/<id>/<id>.filtered.pair.2.fq.gz`
+* `filtering/<id>/<id>.filtered.singles.fq.gz`
+* `filtering/read_count_after_qc.txt`
 
 ## MAGs:
 
@@ -26,7 +26,7 @@ Binning (metabat2)
 * `bins/bins/<id>.psa_megahit.psb_metabat2.{000001}.fa.gz`
 
 Per-Bin Gene Calling (seqtk)
-* `per_bin_genecalls/<id>_per_bin_genecalls.tar.gz`
+* `per_bin_genecalls/<id>/<id>_per_bin_genecalls.tar.gz`
 
 Assembly Stats (assembly-stats)
 * `assembly_stats/<id>.assembly_stats.tsv`
@@ -56,7 +56,7 @@ sORFs Detection (macrel)
 Genome Quality Assessment (checkm2, gunc)
 * `gunc/<id>.GUNC.maxCSS_level.tsv`
 * `gunc/<id>.GUNC.maxCSS_level_gunc5.tsv`
-* `gunc/.GUNC.all_levels/<id>.psa_megahit.psb_metabat2.{000001}.progenomes_2.1.all_levels.tsv`
+* `gunc/<id>.GUNC.all_levels/<id>.psa_megahit.psb_metabat2.{000001}.progenomes_2.1.all_levels.tsv`
 * `checkm2/<id>.checkm2.tsv`
 
 Functional Annotation (eggnog-mapper)
