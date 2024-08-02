@@ -66,3 +66,9 @@ Schmidt TSB, Fullam A, Ferretti P, et al. SPIRE: a Searchable, Planetary-scale m
 5. Genome Quality Assessment (checkm2, gunc)
 6. Functional Annotation (eggnog-mapper)
 7. Taxonomic Classification (gtdbtk)
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/grp-bork/spire/main/docs/SPIRE.DAG.dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/grp-bork/spire/main/docs/SPIRE.DAG.light.svg">
+  <img src="https://raw.githubusercontent.com/grp-bork/spire/main/docs/SPIRE.DAG.light.svg" width="400px"> 
+</picture>
