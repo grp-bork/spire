@@ -1,14 +1,14 @@
 #!/usr/bin/env nextflow
  
 process preprocess_fastqs {
-    publishDir "${params.outdir}/${sample_id}"
+    publishDir "${params.outdir}/filtering/${sample_id}"
 
     input:
     tuple val(sample_id), path(fastq_files)
 
     output:
     tuple val(sample_id), path("${sample_id}/${sample_id}.filtered.*fq.gz"), emit: filtered
-    path("read_count_after_qc.txt"), emit: counts
+    path("${sample_id}_read_count_after_qc.txt"), emit: counts
 
     script:
     """
@@ -18,7 +18,7 @@ process preprocess_fastqs {
 
     create_ngless_template_files.py -r ${params.NGLESS_REFERENCE}
     ngless -t ./ raw_data_filter.ngl -j ${task.cpus} ./ ${sample_id}
-    cat raw_data_filter.ngl.output_ngless/fq.tsv > read_count_after_qc.txt
+    cat raw_data_filter.ngl.output_ngless/fq.tsv > ${sample_id}_read_count_after_qc.txt
     """
 }
 
@@ -218,7 +218,7 @@ process per_bin_genecalling {
 
     script:
     """
-    mkdir genecalls
+    mkdir ${sample_id}
 
     for bin in bins/*
     do
@@ -232,13 +232,13 @@ process per_bin_genecalling {
       zcat ${genecalls_fna} | grep -f \${bin_id}.contig.names | cut -c2- | cut -f1 -d" " > \${bin_id}.fna.gene_names
 
       ## Get all sequences with genenames in fasta_search
-      seqtk subseq -l 60 ${genecalls_faa} \${bin_id}.faa.gene_names > genecalls/\${bin_id}.extracted.faa
-      seqtk subseq -l 60 ${genecalls_fna} \${bin_id}.fna.gene_names > genecalls/\${bin_id}.extracted.fna
+      seqtk subseq -l 60 ${genecalls_faa} \${bin_id}.faa.gene_names > ${sample_id}/\${bin_id}.extracted.faa
+      seqtk subseq -l 60 ${genecalls_fna} \${bin_id}.fna.gene_names > ${sample_id}/\${bin_id}.extracted.fna
     done
-    for x in genecalls/*;
+    for x in ${sample_id}/*;
     do
       if ! [ -s "\$x" ]; then
-          echo \$x >> genecalls/bins_with_no_genes.txt
+          echo \$x >> ${sample_id}/bins_with_no_genes.txt
           rm \$x
       fi
     done
