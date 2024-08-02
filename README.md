@@ -30,6 +30,7 @@
 [`SPIRE.embl.de`](https://spire.embl.de/) is a comprehensive, planetary-scale microbiome resource featuring over 100,000 processed metagenomes curated from more than 700 studies worldwide. `SPIRE` and the `SPIRE workflow` provide a framework for uniform processing and annotation of metagenomics data. The `SPIRE workflow` allows users to process their own metagenomic data in the same standardized manner, enabling seamless comparison and analysis within the extensive global context of `SPIRE`. 
 
 #### Citation
+This workflow: [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.13150270.svg)](https://doi.org/10.5281/zenodo.13150270)
 
 Cite the [SPIRE publication](https://doi.org/10.1093/nar/gkad943) when using our workflow:
 ```
