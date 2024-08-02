@@ -70,5 +70,5 @@ Schmidt TSB, Fullam A, Ferretti P, et al. SPIRE: a Searchable, Planetary-scale m
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/grp-bork/spire/main/docs/SPIRE.DAG.dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/grp-bork/spire/main/docs/SPIRE.DAG.light.svg">
-  <img src="https://raw.githubusercontent.com/grp-bork/spire/main/docs/SPIRE.DAG.light.svg" width="400px"> 
+  <img src="https://raw.githubusercontent.com/grp-bork/spire/main/docs/SPIRE.DAG.light.svg" width="1000px"> 
 </picture>
