@@ -1,0 +1,11 @@
+url_path,views_total,views_unique
+/grp-bork/spire,98,5
+/grp-bork/spire/tree/main/docs,37,2
+/grp-bork/spire/blob/main/main.nf,33,3
+/grp-bork/spire/blob/main/docs/output.md,22,2
+/grp-bork/spire/pulls,17,2
+/grp-bork/spire/blob/main/nextflow.config,17,1
+/grp-bork/spire/blob/main/nextflow_schema.json,13,1
+/grp-bork/spire/tree/main,13,1
+/grp-bork/spire/commits/main/main.nf,11,1
+/grp-bork/spire/edit/main/README.md,10,1
