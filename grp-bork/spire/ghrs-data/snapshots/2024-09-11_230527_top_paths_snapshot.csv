@@ -1,0 +1,11 @@
+url_path,views_total,views_unique
+/grp-bork/spire/tree/main,14,1
+/grp-bork/spire/blob/main/main.nf,13,2
+/grp-bork/spire/blob/main/nextflow.config,9,1
+/grp-bork/spire,7,5
+/grp-bork/spire/tree/main/docs,7,2
+/grp-bork/spire/blob/main/docs/SPIRE.DAG.dark.svg,5,2
+/grp-bork/spire/blob/dadf4a0e71dcba45ff9bf068c0253cccae8830cc/docs/SPIRE.DAG.light.svg,4,1
+/grp-bork/spire/tree/dadf4a0e71dcba45ff9bf068c0253cccae8830cc/docs,4,1
+/grp-bork/spire/tree/main/.github/workflows,4,1
+/grp-bork/spire/tree/main/bin,3,1
