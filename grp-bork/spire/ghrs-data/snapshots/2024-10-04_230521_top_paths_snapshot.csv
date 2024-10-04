@@ -1,0 +1,11 @@
+url_path,views_total,views_unique
+/grp-bork/spire,7,7
+/grp-bork/spire/tree/main,5,1
+/grp-bork/spire/blob/dadf4a0e71dcba45ff9bf068c0253cccae8830cc/main.nf,4,1
+/grp-bork/spire/blob/main/main.nf,3,1
+/grp-bork/spire/blob/main/CHANGELOG.md,2,1
+/grp-bork/spire/blob/main/clowm_info.json,1,1
+/grp-bork/spire/blob/main/nextflow.config,1,1
+/grp-bork/spire/releases/tag/v1.0.5,1,1
+/grp-bork/spire/tree/main/bin,1,1
+/grp-bork/spire/tree/main/.github,1,1
