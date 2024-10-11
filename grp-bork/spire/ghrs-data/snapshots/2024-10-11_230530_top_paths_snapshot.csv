@@ -1,0 +1,11 @@
+url_path,views_total,views_unique
+/grp-bork/spire,13,6
+/grp-bork/spire/tree/main,5,1
+/grp-bork/spire/blob/main/nextflow_schema.json,4,1
+/grp-bork/spire/blob/main/clowm_info.json,3,1
+/grp-bork/spire/blob/main/main.nf,3,1
+/grp-bork/spire/blob/main/nextflow.config,2,2
+/grp-bork/spire/commits/main,2,1
+/grp-bork/spire/tree/dadf4a0e71dcba45ff9bf068c0253cccae8830cc,2,1
+/grp-bork/spire/blob/dadf4a0e71dcba45ff9bf068c0253cccae8830cc/clowm_info.json,1,1
+/grp-bork/spire/blob/dadf4a0e71dcba45ff9bf068c0253cccae8830cc/nextflow_schema.json,1,1
