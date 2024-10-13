@@ -1,0 +1,11 @@
+url_path,views_total,views_unique
+/grp-bork/spire,16,8
+/grp-bork/spire/tree/main,13,1
+/grp-bork/spire/blob/main/nextflow.config,9,3
+/grp-bork/spire/blob/main/main.nf,9,1
+/grp-bork/spire/blob/main/nextflow_schema.json,5,1
+/grp-bork/spire/blob/main/clowm_info.json,3,1
+/grp-bork/spire/blob/01d88bdd38c9e4b0960a0f7fc1a8f1b536dace39/nextflow.config,2,1
+/grp-bork/spire/blob/main/bin/create_ngless_template_files.py,2,1
+/grp-bork/spire/commits/main,2,1
+/grp-bork/spire/tree/01d88bdd38c9e4b0960a0f7fc1a8f1b536dace39,2,1
