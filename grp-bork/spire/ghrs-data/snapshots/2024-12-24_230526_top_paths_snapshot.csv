@@ -1,0 +1,11 @@
+url_path,views_total,views_unique
+/grp-bork/spire,7,3
+/grp-bork/spire/blob/main/main.nf,3,1
+/grp-bork/spire/tree/main/.github/workflows,2,2
+/grp-bork/spire/blob/main/nextflow.config,2,1
+/grp-bork/spire/tree/main,2,1
+/grp-bork/spire/blob/main/bin/add_gunc5_score.py,1,1
+/grp-bork/spire/blob/main/docs/output.md,1,1
+/grp-bork/spire/blob/main/docs/usage.md,1,1
+/grp-bork/spire/blob/main/.github/workflows/github-repo-stats.yml,1,1
+/grp-bork/spire/blob/main/nextflow_schema.json,1,1
