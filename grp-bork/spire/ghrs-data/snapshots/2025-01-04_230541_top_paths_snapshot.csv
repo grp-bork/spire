@@ -1,0 +1,8 @@
+url_path,views_total,views_unique
+/grp-bork/spire/tree/main,5,1
+/grp-bork/spire/blob/main/main.nf,3,1
+/grp-bork/spire,2,2
+/grp-bork/spire/tree/main/bin,2,2
+/grp-bork/spire/blob/main/bin/add_gunc5_score.py,1,1
+/grp-bork/spire/blob/main/bin/create_ngless_template_files.py,1,1
+/grp-bork/spire/blob/main/nextflow.config,1,1
