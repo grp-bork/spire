@@ -1,0 +1,8 @@
+url_path,views_total,views_unique
+/grp-bork/spire/tree/main,6,2
+/grp-bork/spire/blob/main/main.nf,4,2
+/grp-bork/spire,3,3
+/grp-bork/spire/blob/main/nextflow.config,2,2
+/grp-bork/spire/blob/main/bin/create_ngless_template_files.py,1,1
+/grp-bork/spire/blob/main/nextflow_schema.json,1,1
+/grp-bork/spire/tree/main/bin,1,1
