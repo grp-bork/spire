@@ -1,0 +1,6 @@
+url_path,views_total,views_unique
+/grp-bork/spire,5,5
+/grp-bork/spire/tree/main,3,2
+/grp-bork/spire/blob/main/main.nf,1,1
+/grp-bork/spire/blob/main/nextflow.config,1,1
+/grp-bork/spire/blob/main/nextflow_schema.json,1,1
