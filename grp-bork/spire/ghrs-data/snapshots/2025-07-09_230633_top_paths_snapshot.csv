@@ -1,0 +1,11 @@
+url_path,views_total,views_unique
+/grp-bork/spire,9,8
+/grp-bork/spire/tree/main/docs,4,2
+/grp-bork/spire/blob/main/clowm_info.json,4,1
+/grp-bork/spire/blob/main/main.nf,2,2
+/grp-bork/spire/blob/main/nextflow_schema.json,2,2
+/grp-bork/spire/issues,2,2
+/grp-bork/spire/releases,2,2
+/grp-bork/spire/blob/main/docs/output.md,1,1
+/grp-bork/spire/blob/main/docs/SPIRE.DAG.dark.svg,1,1
+/grp-bork/spire/blob/main/docs/SPIRE.DAG.light.svg,1,1
