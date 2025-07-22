@@ -1,0 +1,11 @@
+url_path,views_total,views_unique
+/grp-bork/spire,11,5
+/grp-bork/spire/tree/github-repo-stats,2,2
+/grp-bork/spire/tree/main/.github/workflows,2,2
+/grp-bork/spire/blob/main/main.nf,2,1
+/grp-bork/spire/blob/github-repo-stats/grp-bork/spire/ghrs-data/views_clones_aggregate.csv,1,1
+/grp-bork/spire/blob/main/clowm_info.json,1,1
+/grp-bork/spire/blob/main/.github/workflows/github-repo-stats.yml,1,1
+/grp-bork/spire/blob/main/nextflow.config,1,1
+/grp-bork/spire/blob/main/README.md,1,1
+/grp-bork/spire/branches,1,1
