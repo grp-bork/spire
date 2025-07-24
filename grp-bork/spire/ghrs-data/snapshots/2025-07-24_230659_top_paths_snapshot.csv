@@ -1,0 +1,11 @@
+url_path,views_total,views_unique
+/grp-bork/spire,12,4
+/grp-bork/spire/tree/github-repo-stats,3,2
+/grp-bork/spire/tree/github-repo-stats/grp-bork/spire,3,2
+/grp-bork/spire/tree/main/.github/workflows,3,2
+/grp-bork/spire/blob/main/nextflow_schema.json,2,1
+/grp-bork/spire/edit/main/nextflow_schema.json,2,1
+/grp-bork/spire/tree/dadf4a0e71dcba45ff9bf068c0253cccae8830cc/bin,2,1
+/grp-bork/spire/blob/dadf4a0e71dcba45ff9bf068c0253cccae8830cc/main.nf,1,1
+/grp-bork/spire/blob/dadf4a0e71dcba45ff9bf068c0253cccae8830cc/README.md,1,1
+/grp-bork/spire/blob/github-repo-stats/grp-bork/spire/ghrs-data/views_clones_aggregate.csv,1,1
