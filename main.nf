@@ -467,12 +467,12 @@ workflow {
         if (params.NCBI_API_KEY == 'none') {
             input_samples = Channel
                 .fromSRA(params.input_SRA_id)
-                .view()
+                .dump(pretty:true, tag: "input_data")
         }
         else {
             input_samples = Channel
                 .fromSRA(params.input_SRA_id, apiKey:params.NCBI_API_KEY)
-                .view()
+                .dump(pretty:true, tag: "input_data")
         }
 
     } else if (params.input_source == "disk") {
@@ -480,7 +480,7 @@ workflow {
         input_samples = Channel.fromPath("${params.input_dir}/**[._]{fastq.gz,fq.gz,fastq.bz2,fq.bz2}")
             .map { file -> [ file.getParent().getName(), file ] }
 			.groupTuple(by: 0)
-            .view()       
+            .dump(pretty:true, tag: "input_data")
 
     }
 
