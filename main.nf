@@ -463,16 +463,26 @@ process gtdbtk {
 
 workflow {
 
-    if (params.NCBI_API_KEY == 'none') {
-    input_samples = Channel
-        .fromSRA(params.input_SRA_id)
-        .view()
+    if (params.input_source == "sra") {
+        if (params.NCBI_API_KEY == 'none') {
+            input_samples = Channel
+                .fromSRA(params.input_SRA_id)
+                .view()
+        }
+        else {
+            input_samples = Channel
+                .fromSRA(params.input_SRA_id, apiKey:params.NCBI_API_KEY)
+                .view()
+        }
+
+    } else if (params.input_source == "disk") {
+
+        input_samples = Channel.fromPath("${params.input_dir}/**[._]{fastq.gz,fq.gz,fastq.bz2,fq.bz2}")
+            .map { file -> [ file.getParent().getName(), file) ] }
+			.groupTuple(by: 0)        
+
     }
-    else {
-    input_samples = Channel
-        .fromSRA(params.input_SRA_id, apiKey:params.NCBI_API_KEY)
-        .view()
-    }
+
 
     preprocess_fastqs(input_samples)
     assembly(preprocess_fastqs.out.filtered)
