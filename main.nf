@@ -478,7 +478,7 @@ workflow {
     } else if (params.input_source == "disk") {
 
         input_samples = Channel.fromPath("${params.input_dir}/**[._]{fastq.gz,fq.gz,fastq.bz2,fq.bz2}")
-            .map { file -> [ file.getParent().getName(), file) ] }
+            .map { file -> [ file.getParent().getName(), file ] }
 			.groupTuple(by: 0)
             .view()       
 
