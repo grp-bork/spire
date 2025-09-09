@@ -457,8 +457,9 @@ process gtdbtk {
     script:
     """
     mkdir ${sample_id}
-    gtdbtk classify_wf --cpus 24 --pplacer_cpus 24 --genome_dir ./bins --out_dir ${sample_id} --extension .fa.gz
+    gtdbtk classify_wf --mash_db ./mash.db --cpus ${task.cpus} --pplacer_cpus ${task.cpus} --genome_dir ./bins --out_dir ${sample_id} --extension .fa.gz
     """
+    // gtdbtk classify_wf --cpus 24 --pplacer_cpus 24 --genome_dir ./bins --out_dir ${sample_id} --extension .fa.gz
 }
 
 workflow {
