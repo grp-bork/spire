@@ -387,11 +387,11 @@ process eggnog_mapper {
     file "${sample_id}.emapper.hits.gz"
 
     script:
+    // export EGGNOG_DATA_DIR='./5.0.2/'
+    // cp -R ${params.EGGNOG_DATA_DIR} ./
     """
-    cp -R ${params.EGGNOG_DATA_DIR} ./
-    export EGGNOG_DATA_DIR='./5.0.2/'
     zcat ${gene_calls} > ${sample_id}.genecalls.faa
-    emapper.py -i ${sample_id}.genecalls.faa --output ${sample_id} --dbmem -m diamond --cpu ${task.cpus} --tax_scope prokaryota_broad
+    emapper.py --data_dir ${params.EGGNOG_DATA_DIR} -i ${sample_id}.genecalls.faa --output ${sample_id} --dbmem -m diamond --cpu ${task.cpus} --tax_scope prokaryota_broad
 
     if [[ -s ${sample_id}.emapper.pfam ]]
     then
