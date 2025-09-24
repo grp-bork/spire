@@ -389,7 +389,7 @@ process eggnog_mapper {
     script:
     """
     mkdir -p eggnog_data
-    find ${params.EGGNOG_DATA_DIR} -type f -exec ls -l {} eggnog_data/ \\;
+    find ${params.EGGNOG_DATA_DIR} -type f -exec ln -s {} eggnog_data/ \\;
     rm -f eggnog_data/eggnog.db
     cp -v ${params.EGGNOG_DATA_DIR}/eggnog.db eggnog_data/
 
