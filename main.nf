@@ -387,17 +387,22 @@ process eggnog_mapper {
     file "${sample_id}.emapper.hits.gz"
 
     script:
-    // export EGGNOG_DATA_DIR='./5.0.2/'
-    // cp -R ${params.EGGNOG_DATA_DIR} ./
     """
+    mkdir -p eggnog_data
+    find ${params.EGGNOG_DATA_DIR} -type f -exec ls -l {} eggnog_data/ \\;
+    rm -f eggnog_data/eggnog.db
+    cp -v ${params.EGGNOG_DATA_DIR}/eggnog.db eggnog_data/
+
     zcat ${gene_calls} > ${sample_id}.genecalls.faa
-    emapper.py --data_dir ${params.EGGNOG_DATA_DIR} -i ${sample_id}.genecalls.faa --output ${sample_id} --dbmem -m diamond --cpu ${task.cpus} --tax_scope prokaryota_broad
+    emapper.py --data_dir eggnog_data -i ${sample_id}.genecalls.faa --output ${sample_id} --dbmem -m diamond --cpu ${task.cpus} --tax_scope prokaryota_broad
 
     if [[ -s ${sample_id}.emapper.pfam ]]
     then
         sed -i -e '/^[ \t]*#/d' ${sample_id}.emapper.pfam
     fi
     gzip ${sample_id}.emapper*
+
+    rm -f eggnog_data/eggnog.db
     sleep 2
     """
 
