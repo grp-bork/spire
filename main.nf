@@ -482,9 +482,25 @@ workflow {
 
     } else if (params.input_source == "disk") {
 
-        input_samples = Channel.fromPath("${params.input_dir}/**[._]{fastq.gz,fq.gz,fastq.bz2,fq.bz2}")
-            .map { file -> [ file.getParent().getName(), file ] }
-			.groupTuple(by: 0)
+        input_samples = Channel.fromPath("${params.input_dir}/**[._]{fastq.gz,fq.gz,fastq.bz2,fq.bz2}")			
+
+        if (params.input_dir_structure == "flat") {
+			input_samples = input_samples
+				.map { file -> [ 
+					file.getName()
+						.replaceAll(/\.(fastq|fq)(\.(gz|bz2))?$/, "")
+						.replaceAll(/[._]R?[12]$/, "")
+						.replaceAll(/[._]singles$/, ""),
+					file
+				] }
+
+		} else {
+			input_samples = input_samples
+				.map { file -> [ file.getParent().getName(), file ] }
+		}
+
+        input_samples = input_samples
+            .groupTuple(by: 0)
             .dump(pretty:true, tag: "input_data")
 
     }
