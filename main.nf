@@ -17,7 +17,7 @@ process preprocess_fastqs {
     mv $fastq_files ${sample_id}
 
     create_ngless_template_files.py -r ${params.NGLESS_REFERENCE}
-    ngless -t ./ raw_data_filter.ngl -j ${task.cpus} ./ ${sample_id}
+    ngless-wrapped -t ./ raw_data_filter.ngl -j ${task.cpus} ./ ${sample_id}
     cat raw_data_filter.ngl.output_ngless/fq.tsv > ${sample_id}_read_count_after_qc.txt
     """
 }
@@ -388,16 +388,21 @@ process eggnog_mapper {
 
     script:
     """
-    cp -R ${params.EGGNOG_DATA_DIR} ./
-    export EGGNOG_DATA_DIR='./5.0.2/'
+    mkdir -p eggnog_data
+    find ${params.EGGNOG_DATA_DIR} -type f -exec ln -s {} eggnog_data/ \\;
+    rm -f eggnog_data/eggnog.db
+    cp -v ${params.EGGNOG_DATA_DIR}/eggnog.db eggnog_data/
+
     zcat ${gene_calls} > ${sample_id}.genecalls.faa
-    emapper.py -i ${sample_id}.genecalls.faa --output ${sample_id} --dbmem -m diamond --cpu ${task.cpus} --tax_scope prokaryota_broad
+    emapper.py --data_dir eggnog_data -i ${sample_id}.genecalls.faa --output ${sample_id} --dbmem -m diamond --cpu ${task.cpus} --tax_scope prokaryota_broad
 
     if [[ -s ${sample_id}.emapper.pfam ]]
     then
         sed -i -e '/^[ \t]*#/d' ${sample_id}.emapper.pfam
     fi
     gzip ${sample_id}.emapper*
+
+    rm -f eggnog_data/eggnog.db
     sleep 2
     """
 
@@ -457,22 +462,49 @@ process gtdbtk {
     script:
     """
     mkdir ${sample_id}
-    gtdbtk classify_wf --cpus 24 --pplacer_cpus 24 --genome_dir ./bins --out_dir ${sample_id} --extension .fa.gz
+    gtdbtk classify_wf --mash_db ./mash.db --cpus ${task.cpus} --pplacer_cpus ${task.cpus} --genome_dir ./bins --out_dir ${sample_id} --extension .fa.gz
     """
 }
 
 workflow {
 
-    if (params.NCBI_API_KEY == 'none') {
-    input_samples = Channel
-        .fromSRA(params.input_SRA_id)
-        .view()
+    if (params.input_source == "sra") {
+        if (params.NCBI_API_KEY == 'none') {
+            input_samples = Channel
+                .fromSRA(params.input_SRA_id)
+                .dump(pretty:true, tag: "input_data")
+        }
+        else {
+            input_samples = Channel
+                .fromSRA(params.input_SRA_id, apiKey:params.NCBI_API_KEY)
+                .dump(pretty:true, tag: "input_data")
+        }
+
+    } else if (params.input_source == "disk") {
+
+        input_samples = Channel.fromPath("${params.input_dir}/**[._]{fastq.gz,fq.gz,fastq.bz2,fq.bz2}")			
+
+        if (params.input_dir_structure == "flat") {
+			input_samples = input_samples
+				.map { file -> [ 
+					file.getName()
+						.replaceAll(/\.(fastq|fq)(\.(gz|bz2))?$/, "")
+						.replaceAll(/[._]R?[12]$/, "")
+						.replaceAll(/[._]singles$/, ""),
+					file
+				] }
+
+		} else {
+			input_samples = input_samples
+				.map { file -> [ file.getParent().getName(), file ] }
+		}
+
+        input_samples = input_samples
+            .groupTuple(by: 0)
+            .dump(pretty:true, tag: "input_data")
+
     }
-    else {
-    input_samples = Channel
-        .fromSRA(params.input_SRA_id, apiKey:params.NCBI_API_KEY)
-        .view()
-    }
+
 
     preprocess_fastqs(input_samples)
     assembly(preprocess_fastqs.out.filtered)

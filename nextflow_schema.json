@@ -10,10 +10,10 @@
             "description": "General Input",
             "default": "",
             "properties": {
-                "input_SRA_id": {
+                "input_dir": {
                     "type": "string",
                     "fa_icon": "fas fa-sign-in-alt",
-                    "description": "SRA id of data to run the pipeline on"
+                    "description": "Input directory containing fastq files"
                 },
                 "outdir": {
                     "type": "string",
@@ -24,7 +24,7 @@
             },
             "required": [
                 "outdir",
-                "input_SRA_id"
+                "input_dir"
             ],
             "fa_icon": "fas fa-terminal"
         },
@@ -34,46 +34,35 @@
             "description": "Optional Parameters",
             "default": "",
             "properties": {
-                "NCBI_API_KEY": {
-                    "type": "string",
-                    "description": "NCBI API Key for downloading data",
-                    "help_text": "Details: https://ncbiinsights.ncbi.nlm.nih.gov/2017/11/02/new-api-keys-for-the-e-utilities/",
-                    "default": "none"
-                },
                 "GTDBTK_DATA_PATH": {
                     "type": "string",
                     "description": "Path to the GTDB database directory",
-                    "help_text": "This should be the root directory of gtdb database v214",
-                    "hidden": true,
-                    "default": "/vol/data/databases/clowm/CLDB-018e12ef116275458ea149715133b0ec/latest/release214/"
+                    "help_text": "This should be the root directory of a gtdb database.",
+                    "hidden": true
                 },
                 "CHECKM2DB": {
                     "type": "string",
                     "description": "Path to the CheckM2 database file",
-                    "help_text": "This should be the uniref diamond database of checkm2",
-                    "hidden": true,
-                    "default": "/vol/data/databases/clowm/CLDB-018e846395037fbf8755cbbe8537206e/018e8463950c723e8939a838a9c880a0/checkm2/uniref100.KO.1.dmnd"
+                    "help_text": "This should be the uniref diamond database of checkm2.",
+                    "hidden": true
                 },
                 "GUNC_DB": {
                     "type": "string",
                     "description": "Path to the GUNC database file",
-                    "help_text": "This should be the proGenomes diamond database of GUNC",
-                    "hidden": true,
-                    "default": "/vol/data/databases/clowm/CLDB-018e75b260a672c7a1051c96b1a3bb1a/018e75b260b07b35ab2cb6d202505f42/gunc_db_progenomes2.1.dmnd"
+                    "help_text": "This should be the proGenomes diamond database of GUNC.",
+                    "hidden": true
                 },
                 "EGGNOG_DATA_DIR": {
                     "type": "string",
                     "description": "Path to the eggnog-mapper database directory",
-                    "help_text": "This should be the root directory of eggnog-mapper db",
-                    "hidden": true,
-                    "default": "/vol/data/databases/clowm/CLDB-018e846affa774508716ac5b5a20386e/018e846affb17f08b4b17d7226aa602e/eggnog-mapper/5.0.2/"
+                    "help_text": "This should be the root directory of an eggnog-mapper db.",
+                    "hidden": true
                 },
                 "NGLESS_REFERENCE": {
                     "type": "string",
                     "description": "Path to the ngless human reference genome file",
-                    "help_text": "This should be the path to a human reference genome fasta file",
-                    "hidden": true,
-                    "default": "/vol/data/databases/clowm/CLDB-018e846dacd67b10acfad42129bd82e4/018e846dace2766d93e3e32177e66ebb/ngless_human/human.fna"
+                    "help_text": "This should be the path to a human reference genome fasta file.",
+                    "hidden": true
                 }
             }
         }
