@@ -12,6 +12,7 @@
             "properties": {
                 "input_dir": {
                     "type": "string",
+                    "format": "directory-path",
                     "fa_icon": "fas fa-sign-in-alt",
                     "description": "Input directory containing fastq files"
                 },
