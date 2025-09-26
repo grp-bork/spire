@@ -38,30 +38,35 @@
                 "GTDBTK_DATA_PATH": {
                     "type": "string",
                     "description": "Path to the GTDB database directory",
+                    "format": "directory-path",
                     "help_text": "This should be the root directory of a gtdb database.",
                     "hidden": true
                 },
                 "CHECKM2DB": {
                     "type": "string",
                     "description": "Path to the CheckM2 database file",
+                    "format": "directory-path",
                     "help_text": "This should be the uniref diamond database of checkm2.",
                     "hidden": true
                 },
                 "GUNC_DB": {
                     "type": "string",
                     "description": "Path to the GUNC database file",
+                    "format": "directory-path",
                     "help_text": "This should be the proGenomes diamond database of GUNC.",
                     "hidden": true
                 },
                 "EGGNOG_DATA_DIR": {
                     "type": "string",
                     "description": "Path to the eggnog-mapper database directory",
+                    "format": "directory-path",
                     "help_text": "This should be the root directory of an eggnog-mapper db.",
                     "hidden": true
                 },
                 "NGLESS_REFERENCE": {
                     "type": "string",
                     "description": "Path to the ngless human reference genome file",
+                    "format": "directory-path",
                     "help_text": "This should be the path to a human reference genome fasta file.",
                     "hidden": true
                 }
