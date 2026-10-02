@@ -1,0 +1,10 @@
+url_path,views_total,views_unique
+/grp-bork/spire,6,5
+/grp-bork/spire/blob/main/main.nf,3,1
+/grp-bork/spire/blob/main/nextflow.config,3,1
+/grp-bork/spire/blob/main/README.md,2,2
+/grp-bork/spire/blob/main/bin/create_ngless_template_files.py,2,1
+/grp-bork/spire/blob/main/.github/workflows/github-repo-stats.yml,1,1
+/grp-bork/spire/blob/main/CHANGELOG.md,1,1
+/grp-bork/spire/tree/main/.github/workflows,1,1
+/grp-bork/spire/tree/main/bin,1,1
